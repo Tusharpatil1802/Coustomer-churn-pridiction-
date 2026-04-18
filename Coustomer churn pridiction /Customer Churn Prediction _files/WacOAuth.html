@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0184)https://oauth.officeapps.live.com/oa/WacOAuth.aspx?replyUrl=https://word-edit.officeapps.live.com&usid=7da4f26d-7599-403b-8cd8-d051868205ca&WacUserType=WOPI&sv=2&bv=20260320.6&msalv3=1 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+
+</title>
+		<style id="sharedauthstyles" nonce=""></style>
+		<script type="text/javascript" nonce="">
+			class TrustedTypeHandler
+			{
+				constructor()
+				{
+					if("True" === "False")
+					{
+						return;
+					}
+
+					if (window.trustedTypes && window.trustedTypes.createPolicy) {
+						this.policy = trustedTypes.createPolicy('wise-cdn', {
+							createScriptURL(url) {
+								const parsed = new URL(url, document.baseURI);
+								const wiseDomains = "wise.public.cdn.office.net wise-backup.public.onecdn.static.microsoft".split(" ");
+								if (parsed.protocol === 'https:' && wiseDomains.includes(parsed.host)) {
+									return url;
+								}
+
+								if("False" === "True")
+								{
+									if (parsed.protocol === 'https:' && parsed.origin == "https://localhost:5000") {
+										return url;
+									}
+								}
+
+								throw new TypeError('invalid URL');
+							},
+						});
+					}
+				}
+
+				createScriptURL(scriptUrl)
+				{
+					if(!this.policy || "True" === "False")
+					{
+						return scriptUrl;
+					}
+					else
+					{
+						return this.policy.createScriptURL(scriptUrl);
+					}
+				}
+			}
+			var trustedTypePolicy = new TrustedTypeHandler();
+
+			function loadBackupScript() {
+				var backupScript = document.createElement('script');
+				backupScript.setAttribute("data-allowedapps", "5a4eed13-c4c4-4b4c-9506-334ab200bf31;93d53678-613d-4013-afc1-62e9e444a0a5");
+				backupScript.setAttribute("data-allowedaudiences", "e03a13ee-9730-4cae-8525-47559c8cf18a;https://augloop.office.com/v2;394866fc-eedb-4f01-8536-3ff84b16be2a;liveprofilecard.access;https://graph.microsoft.com;https://shredder-us.osi.office.net/;https://substrate.office.com;https://dcg.microsoft.com/;https://consentservice.microsoft.com/web;https://consentservice.microsoft.com/checkin;https://attributes.engagement.office.com;84a0e9dd-6e58-4aad-82af-ebe485acd09d/.default;84a0e9dd-6e58-4aad-82af-ebe485acd09d;https://urlp-v2.asm.skype.com;https://immersivereader.cloud.microsoft;https://turbo.microsoft.com;00000003-0000-0ff1-ce00-000000000000;f7c5d3ff-9d2b-414b-a1b4-d736c4e1dfe5;62c1cedb-bd82-475a-91ca-c414c6d72712;https://petrol-int.office.microsoft.com/feedback.readwrite;https://petrol.office.microsoft.com/feedback.readwrite;");
+				backupScript.setAttribute("data-origin", "https://word-edit.officeapps.live.com");
+				backupScript.setAttribute("data-scriptload", "PRODUCTION.10: 20260318.9");
+				backupScript.setAttribute("fetchpriority", "high");
+				backupScript.id = "sharedauthscript";
+				backupScript.src = trustedTypePolicy.createScriptURL("https://wise-m-backup.public.onecdn.static.microsoft/wise/owl/sharedauthclientmsal.90ecd3de07880c216a14.js");
+				backupScript.integrity = "sha384-8DTpCG8U7ZKe+P05q9nDSzbm6goPNngkUmu631UN+u2tqXfBK6BD2fQSzTS0VdTU";
+				backupScript.nonce = "75180048-24ab-46ac-9db9-40e12cd4c2c9";
+				backupScript.crossOrigin = "anonymous";
+				if ("True" === "True") {
+					backupScript.onload = function () {
+						logLoadScriptSuccess(true, performance.now() - startTime);
+					};
+					backupScript.onerror = function () {
+						logLoadScriptError(true, performance.now() - startTime);
+					};
+				}
+				document.head.appendChild(backupScript);
+			}
+
+			function loadScript() {
+				var script = document.createElement('script');
+				script.setAttribute("data-allowedapps", "5a4eed13-c4c4-4b4c-9506-334ab200bf31;93d53678-613d-4013-afc1-62e9e444a0a5");
+				script.setAttribute("data-allowedaudiences", "e03a13ee-9730-4cae-8525-47559c8cf18a;https://augloop.office.com/v2;394866fc-eedb-4f01-8536-3ff84b16be2a;liveprofilecard.access;https://graph.microsoft.com;https://shredder-us.osi.office.net/;https://substrate.office.com;https://dcg.microsoft.com/;https://consentservice.microsoft.com/web;https://consentservice.microsoft.com/checkin;https://attributes.engagement.office.com;84a0e9dd-6e58-4aad-82af-ebe485acd09d/.default;84a0e9dd-6e58-4aad-82af-ebe485acd09d;https://urlp-v2.asm.skype.com;https://immersivereader.cloud.microsoft;https://turbo.microsoft.com;00000003-0000-0ff1-ce00-000000000000;f7c5d3ff-9d2b-414b-a1b4-d736c4e1dfe5;62c1cedb-bd82-475a-91ca-c414c6d72712;https://petrol-int.office.microsoft.com/feedback.readwrite;https://petrol.office.microsoft.com/feedback.readwrite;");
+				script.setAttribute("data-origin", "https://word-edit.officeapps.live.com");
+				script.setAttribute("data-scriptload", "PRODUCTION.10: 20260318.9");
+				script.setAttribute("fetchpriority", "high");
+				script.id = "sharedauthscript";
+				script.src = trustedTypePolicy.createScriptURL("https://wise.public.cdn.office.net/wise/owl/sharedauthclientmsal.90ecd3de07880c216a14.js")
+				script.integrity = "sha384-8DTpCG8U7ZKe+P05q9nDSzbm6goPNngkUmu631UN+u2tqXfBK6BD2fQSzTS0VdTU";
+				script.nonce = "75180048-24ab-46ac-9db9-40e12cd4c2c9";
+				script.crossOrigin = "anonymous";
+				if ("True" === "True") {
+					script.onload = function () {
+						logLoadScriptSuccess(false, performance.now() - startTime);
+					};
+					script.onerror = function () {
+						logLoadScriptError(false, performance.now() - startTime);
+						script.parentNode?.removeChild(script);
+						loadBackupScript();
+					};
+				} else {
+					script.onerror = function () {
+						script.parentNode?.removeChild(script);
+						loadBackupScript();
+					};
+				}
+				document.head.appendChild(script);
+			}
+
+			function logLoadScriptSuccess(isBackup, elapsedMilliseconds) {
+				if (navigator.sendBeacon) {
+					var data = JSON.stringify({ isBackup, elapsedMilliseconds });
+					var blob = new Blob([data], { type: 'application/json; charset=utf-8' });
+					navigator.sendBeacon("WacOauth.aspx/LogLoadScriptSuccess", blob);
+				}
+			}
+
+			function logLoadScriptError(isBackup, elapsedMilliseconds) {
+				if (navigator.sendBeacon) {
+					var data = JSON.stringify({ isBackup, elapsedMilliseconds });
+					var blob = new Blob([data], { type: 'application/json; charset=utf-8' });
+					navigator.sendBeacon("WacOauth.aspx/LogLoadScriptError", blob);
+				}
+			}
+
+			var startTime = performance.now();
+			loadScript();
+		</script><script data-allowedapps="5a4eed13-c4c4-4b4c-9506-334ab200bf31;93d53678-613d-4013-afc1-62e9e444a0a5" data-allowedaudiences="e03a13ee-9730-4cae-8525-47559c8cf18a;https://augloop.office.com/v2;394866fc-eedb-4f01-8536-3ff84b16be2a;liveprofilecard.access;https://graph.microsoft.com;https://shredder-us.osi.office.net/;https://substrate.office.com;https://dcg.microsoft.com/;https://consentservice.microsoft.com/web;https://consentservice.microsoft.com/checkin;https://attributes.engagement.office.com;84a0e9dd-6e58-4aad-82af-ebe485acd09d/.default;84a0e9dd-6e58-4aad-82af-ebe485acd09d;https://urlp-v2.asm.skype.com;https://immersivereader.cloud.microsoft;https://turbo.microsoft.com;00000003-0000-0ff1-ce00-000000000000;f7c5d3ff-9d2b-414b-a1b4-d736c4e1dfe5;62c1cedb-bd82-475a-91ca-c414c6d72712;https://petrol-int.office.microsoft.com/feedback.readwrite;https://petrol.office.microsoft.com/feedback.readwrite;" data-origin="https://word-edit.officeapps.live.com" data-scriptload="PRODUCTION.10: 20260318.9" fetchpriority="high" id="sharedauthscript" src="./sharedauthclientmsal.90ecd3de07880c216a14.js" integrity="sha384-8DTpCG8U7ZKe+P05q9nDSzbm6goPNngkUmu631UN+u2tqXfBK6BD2fQSzTS0VdTU" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		
+	
+</body></html>
